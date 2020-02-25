@@ -10,7 +10,20 @@
   <div>X Coordinate: <span class="x-coord">N/A</span></div>
   <div>Y Coordinate: <span class="y-coord">N/A</span></div>
 
+  <ul onclick="changeHTML()">
+    <li class="thing"></li>
+    <li></li>
+    <li class="thing"></li>
+  </ul>
+
+  <h1 onclick="displayProducts()">All Products</h1>
+  <ul class="products"></ul>
+
   <script>
+    function doSomething() {
+      console.log("You clicked on the header!");
+    }
+
     function changeBackgroundColor() {
       var pTag = document.querySelector("p");
       var colorString = "#"
@@ -27,14 +40,49 @@
     }
 
     function showCoords(event) {
-      console.log("X coordinate: ", event.clientX);
-      console.log("Y coordinate: ", event.clientY);
+      console.log("X coordinate: ", event.clientX, ", Y coordinate: ", event.clientY);
 
       var xCoordSpan = document.querySelector(".x-coord");
       var yCoordSpan = document.querySelector(".y-coord");
 
       xCoordSpan.innerHTML = event.clientX;
       yCoordSpan.innerHTML = event.clientY;
+    }
+
+    function displayProducts() {
+      var products = [
+        { id: 1, name: "Lightsaber", price: 100},
+        { id: 2, name: "Yoda Sleeping Bag", price: 76},
+        { id: 3, name: "Space Cowboy Laser Gun", price: 40}
+      ];
+
+      var productsList = "";
+
+      products.forEach(function(product) {
+        productsList += `<li>$${product.price} - ${ product.name }</li>`;
+      });
+
+      var productsElement = document.querySelector(".products");
+      productsElement.innerHTML = productsList;
+    }
+
+    function changeHTML() {
+      var firstMessage = "Hey I'm here";
+    
+      var liCollection = document.querySelectorAll("li");
+
+      console.log(liCollection);
+      liCollection.forEach(function(liTag) {
+        liTag.innerHTML = firstMessage;
+      });
+      
+
+      var thingCollection = document.querySelectorAll(".thing");
+
+      console.log(thingCollection);
+      thingCollection.forEach(function(thingTag) {
+        thingTag.style.color = "red";
+      });
     }
   </script>
 </body>
