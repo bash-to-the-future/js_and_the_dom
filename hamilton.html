@@ -4,8 +4,8 @@
   <title>JavaScript Example</title>
 </head>
 <body>
-  <h1>Alexander Hamilton</h1>
-  <p onmousemove="changeBackgroundColor()">Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
+  <h1 onmousemove="showCoords(event)">Alexander Hamilton</h1>
+  <p>Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
 
   <div>X Coordinate: <span class="x-coord">N/A</span></div>
   <div>Y Coordinate: <span class="y-coord">N/A</span></div>
@@ -26,7 +26,7 @@
       pTag.style.backgroundColor = colorString;
     }
 
-    function thirdThing(event) {
+    function showCoords(event) {
       console.log("X coordinate: ", event.clientX);
       console.log("Y coordinate: ", event.clientY);
 
