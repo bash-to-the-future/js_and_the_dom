@@ -2,88 +2,27 @@
 <html>
 <head>
   <title>JavaScript Example</title>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script src="jq_example.js"></script>
 </head>
 <body>
-  <h1 onmousemove="showCoords(event)">Alexander Hamilton</h1>
+  <h1>Alexander Hamilton</h1>
   <p>Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
 
   <div>X Coordinate: <span class="x-coord">N/A</span></div>
   <div>Y Coordinate: <span class="y-coord">N/A</span></div>
 
-  <ul onclick="changeHTML()">
+  <h1>All Products</h1>
+  <ul class="products"></ul>
+
+<!--   <ul onclick="changeHTML()">
     <li class="thing"></li>
     <li></li>
     <li class="thing"></li>
-  </ul>
-
-  <h1 onclick="displayProducts()">All Products</h1>
-  <ul class="products"></ul>
-
-  <script>
-    function doSomething() {
-      console.log("You clicked on the header!");
-    }
-
-    function changeBackgroundColor() {
-      var pTag = document.querySelector("p");
-      var colorString = "#"
-
-      for(var i = 0; i < 6; i++) {
-        var hexCharacters = "0123456789ABCDEF";
-        var randomIndex = Math.floor((Math.random() * hexCharacters.length) + 0);
-        var character = hexCharacters[randomIndex];
-        colorString += character;
-      }
-
-      console.log(colorString);
-      pTag.style.backgroundColor = colorString;
-    }
-
-    function showCoords(event) {
-      console.log("X coordinate: ", event.clientX, ", Y coordinate: ", event.clientY);
-
-      var xCoordSpan = document.querySelector(".x-coord");
-      var yCoordSpan = document.querySelector(".y-coord");
-
-      xCoordSpan.innerHTML = event.clientX;
-      yCoordSpan.innerHTML = event.clientY;
-    }
-
-    function displayProducts() {
-      var products = [
-        { id: 1, name: "Lightsaber", price: 100},
-        { id: 2, name: "Yoda Sleeping Bag", price: 76},
-        { id: 3, name: "Space Cowboy Laser Gun", price: 40}
-      ];
-
-      var productsList = "";
-
-      products.forEach(function(product) {
-        productsList += `<li>$${product.price} - ${ product.name }</li>`;
-      });
-
-      var productsElement = document.querySelector(".products");
-      productsElement.innerHTML = productsList;
-    }
-
-    function changeHTML() {
-      var firstMessage = "Hey I'm here";
-    
-      var liCollection = document.querySelectorAll("li");
-
-      console.log(liCollection);
-      liCollection.forEach(function(liTag) {
-        liTag.innerHTML = firstMessage;
-      });
-      
-
-      var thingCollection = document.querySelectorAll(".thing");
-
-      console.log(thingCollection);
-      thingCollection.forEach(function(thingTag) {
-        thingTag.style.color = "red";
-      });
-    }
-  </script>
+  </ul> -->
 </body>
 </html>
